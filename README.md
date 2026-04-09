@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/hero.svg" alt="Machine unlearning for object detection" width="100%" />
+  <img src="./assets/hero.png" alt="Object Detection Unlearning hero" width="100%" />
 </div>
 
 <div align="center">
@@ -102,7 +102,7 @@ This repository intentionally omits:
 ## Repository Contents
 
 - [docs/public-workflow.md](./docs/public-workflow.md): public technical summary of the workflow and thesis framing
-- [assets/hero.svg](./assets/hero.svg): visual header asset for this repository
+- [assets/hero.png](./assets/hero.png): visual header asset for this repository
 
 ## Why This Repo Exists
 
