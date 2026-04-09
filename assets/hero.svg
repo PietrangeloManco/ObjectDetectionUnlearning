@@ -1,0 +1,29 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="420" rx="28" fill="#061226"/>
+  <rect x="36" y="36" width="1128" height="348" rx="24" fill="url(#bg)"/>
+  <circle cx="980" cy="118" r="92" fill="#1D4ED8" fill-opacity="0.18"/>
+  <circle cx="1040" cy="278" r="116" fill="#38BDF8" fill-opacity="0.14"/>
+  <circle cx="186" cy="88" r="64" fill="#93C5FD" fill-opacity="0.10"/>
+  <rect x="90" y="84" width="190" height="34" rx="17" fill="#0F172A"/>
+  <text x="116" y="106" fill="#BFDBFE" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">MSc Thesis Case Study</text>
+  <text x="88" y="176" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">Machine Unlearning</text>
+  <text x="88" y="232" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">for Object Detection</text>
+  <text x="88" y="286" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="23">
+    Public companion repository for my thesis work on privacy-aware
+  </text>
+  <text x="88" y="320" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="23">
+    and correction-oriented machine unlearning in computer vision.
+  </text>
+  <rect x="88" y="346" width="152" height="32" rx="16" fill="#1D4ED8"/>
+  <text x="118" y="367" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">YOLOS / DETR</text>
+  <rect x="254" y="346" width="154" height="32" rx="16" fill="#0F766E"/>
+  <text x="288" y="367" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">VOC / KITTI</text>
+  <rect x="422" y="346" width="166" height="32" rx="16" fill="#0369A1"/>
+  <text x="452" y="367" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">MIA + mAP / IoU</text>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="54" x2="1118" y2="366" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1730"/>
+      <stop offset="1" stop-color="#0A2742"/>
+    </linearGradient>
+  </defs>
+</svg>
