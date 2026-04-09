@@ -4,7 +4,7 @@
 
 <div align="center">
 
-# Machine Unlearning for Object Detection
+# Object Detection Unlearning
 
 Public companion repository for my master's thesis in Artificial Intelligence and Data Engineering at the University of Pisa.
 
