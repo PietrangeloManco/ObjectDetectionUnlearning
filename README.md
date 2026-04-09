@@ -46,23 +46,40 @@ My contribution centered on turning machine unlearning into a concrete research 
 
 The full research code remains in a supervised private repository and is not mirrored here. What I can share publicly is the workflow and research structure.
 
-```mermaid
-flowchart LR
-    A["Train original detector"] --> B["Define forget / retain split"]
-    B --> C["Run unlearning strategy"]
-    C --> D["Evaluate on retained data"]
-    C --> E["Evaluate on forgetting set"]
-    E --> F["Audit with privacy-oriented signals"]
-```
+<table>
+  <tr>
+    <th align="center" width="25%">Baseline detector</th>
+    <th align="center" width="25%">Forget/retain split</th>
+    <th align="center" width="25%">Unlearning strategy</th>
+    <th align="center" width="25%">Scenario control</th>
+  </tr>
+  <tr>
+    <td align="center">Train or load the original detector that defines the reference utility level.</td>
+    <td align="center">Build the forgetting setup and the complementary retain split for the target experiment.</td>
+    <td align="center">Run retraining or approximate unlearning methods on the detector.</td>
+    <td align="center">Frame the run around either privacy-driven deletion or confusion-removal objectives.</td>
+  </tr>
+  <tr>
+    <th align="center" width="25%">Utility audit</th>
+    <th align="center" width="25%">Forget-set audit</th>
+    <th align="center" width="25%">Privacy check</th>
+    <th align="center" width="25%">Trade-off reading</th>
+  </tr>
+  <tr>
+    <td align="center">Measure retained detection quality with object-detection metrics such as mAP and IoU.</td>
+    <td align="center">Inspect the targeted data to verify that the removed influence no longer behaves like the original model.</td>
+    <td align="center">Use MIA-style signals as an additional privacy-oriented check rather than relying only on accuracy shifts.</td>
+    <td align="center">Compare forgetting effectiveness and retained utility together instead of optimizing only one side.</td>
+  </tr>
+</table>
 
 In practice, the public-safe workflow can be summarized as:
 
-1. Train or load an original object detector.
-2. Build a forgetting setup for a target scenario.
-3. Run an unlearning strategy such as exact retraining or approximate retraining.
-4. Measure retained detection quality with object-detection metrics like `mAP` and `IoU`.
-5. Measure forgetting behavior with privacy-oriented checks such as `Membership Inference Attack (MIA)` analysis.
-6. Compare retained performance against forgetting effectiveness instead of treating either side in isolation.
+1. Choose an object detector and a benchmark dataset.
+2. Train an original baseline model.
+3. Build a forget set and the corresponding retain set.
+4. Apply an unlearning strategy for the selected scenario.
+5. Evaluate retained performance, forgetting behavior, and privacy-oriented signals together.
 
 ## Research Scope
 
@@ -101,7 +118,6 @@ This repository intentionally omits:
 
 ## Repository Contents
 
-- [docs/public-workflow.md](./docs/public-workflow.md): public technical summary of the workflow and thesis framing
 - [assets/hero.png](./assets/hero.png): visual header asset for this repository
 
 ## Why This Repo Exists
