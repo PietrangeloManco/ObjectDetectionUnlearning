@@ -26,17 +26,42 @@ This scenario treats unlearning as a way to remove the influence of selected tra
 
 This scenario treats unlearning as a correction tool for noisy or corrupted supervision, where the goal is to reduce the impact of misleading labels or annotations.
 
-## Publicly Shareable Pipeline
+## High-level pipeline
 
-The workflow can be described at a high level as:
+<table>
+  <tr>
+    <th align="center" width="25%">Baseline detector</th>
+    <th align="center" width="25%">Forget/retain split</th>
+    <th align="center" width="25%">Unlearning strategy</th>
+    <th align="center" width="25%">Scenario control</th>
+  </tr>
+  <tr>
+    <td align="center">Train or load the original detector that defines the reference utility level.</td>
+    <td align="center">Build the forgetting setup and the complementary retain split for the target experiment.</td>
+    <td align="center">Run retraining or approximate unlearning methods on the detector.</td>
+    <td align="center">Frame the run around either privacy-driven deletion or confusion-removal objectives.</td>
+  </tr>
+  <tr>
+    <th align="center" width="25%">Utility audit</th>
+    <th align="center" width="25%">Forget-set audit</th>
+    <th align="center" width="25%">Privacy check</th>
+    <th align="center" width="25%">Trade-off reading</th>
+  </tr>
+  <tr>
+    <td align="center">Measure retained detection quality with object-detection metrics such as mAP and IoU.</td>
+    <td align="center">Inspect the targeted data to verify that the removed influence no longer behaves like the original model.</td>
+    <td align="center">Use MIA-style signals as an additional privacy-oriented check rather than relying only on accuracy shifts.</td>
+    <td align="center">Compare forgetting effectiveness and retained utility together instead of optimizing only one side.</td>
+  </tr>
+</table>
+
+In practice, the public-safe workflow can be summarized as:
 
 1. Choose an object detector and a benchmark dataset.
 2. Train an original baseline model.
 3. Build a forget set and the corresponding retain set.
-4. Apply an unlearning strategy.
-5. Evaluate utility on retained data.
-6. Evaluate forgetting behavior on targeted data.
-7. Compare privacy-oriented signals and standard detection performance together.
+4. Apply an unlearning strategy for the selected scenario.
+5. Evaluate retained performance, forgetting behavior, and privacy-oriented signals together.
 
 ## Publicly Shareable Technical Highlights
 
